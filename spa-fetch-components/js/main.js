@@ -1,9 +1,9 @@
 import { iniciarMenu } from '../components/menu.js';
 
-const carregarComponente = async (componente, container) => {
+const carregarComponente = async (pasta, componente, container) => {
     try {
         // await para esperar a resposta do fetch, e depois converte a resposta para texto que é o html do componente
-        const resposta = await fetch(`./components/${componente}.html`);
+        const resposta = await fetch(`./${pasta}/${componente}.html`);
 
         if (!resposta.ok) {
             throw new Error(`Erro ao carregar componente ${componente} status: ${resposta.status}`);
@@ -41,7 +41,20 @@ const iniciarLinks = () => {
                 botao.setAttribute('aria-expanded', 'Abrir menu')
 
             }
-            await carregarComponente(`./pages/${pagina}.html`, conteudo)
+            await carregarComponente('pages', pagina, conteudo)
         })
     });
 }
+
+// async para esperar o carregamento do componente home antes de iniciar o menu e os links
+const iniciarApp = async () => {
+    const containerMenu = document.querySelector('[data-componente="menu"]');
+    await carregarComponente('components', 'menu', containerMenu);
+    iniciarMenu();
+    iniciarLinks();
+
+    const conteudo = document.querySelector('[data-conteudo]')
+    await carregarComponente('pages', 'home', conteudo)
+}
+
+iniciarApp();
