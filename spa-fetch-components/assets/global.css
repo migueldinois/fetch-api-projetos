@@ -1,0 +1,38 @@
+
+
+
+/** Reset */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/** Variáveis */
+:root {
+  --cor-bg: #e7e7e7;
+  --cor-text: #001088;
+  --cor-primary: #000;
+  --cor-bg-hover: rgba(0, 0, 0, 0.05);
+}
+
+/** Links padrão */
+a {
+  color: var(--cor-primary);
+  text-decoration: none;
+  font-family: sans-serif;
+}
+
+a:hover {
+  background: var(--cor-bg-hover);
+}
+
+/** Conteúdo SPA */
+[data-conteudo] {
+  padding: 20px;
+}
+
+.pagina p {
+  color: var(--cor-text);
+  font-size: 24px;
+}

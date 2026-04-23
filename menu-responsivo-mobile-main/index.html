@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Mobile</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header class="cabecalho">
+        <a class="cabecalho__logo" href="#">Logo</a>
+
+            <!-- acessibilidade:
+            aria-label - nome do botão
+            aria-expanded - estado do menu
+            aria-controls - qual elemento é controlado
+            aria-hospopup - indica que abre um menu 
+            -->
+             
+        <nav class="menu" data-menu>
+            <button class="menu__botao" aria-label="Abrir Menu" aria-haspopup="true" aria-controls="menu-lista"
+            aria-expanded="false">
+            Menu
+             <span class="menu__hambuguer"></span>
+            </button>
+
+            <ul class="menu__lista" id="menu-lista">
+                <li class="menu__item"><a href="#">Sobre</a></li>
+                <li class="menu__item"><a href="#">Produtos</a></li>
+                <li class="menu__item"><a href="#">Portifólio</a></li>
+                <li class="menu__item"><a href="#">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    <script src="./scrip-refatorado.js"></script>
+</body>
+</html>

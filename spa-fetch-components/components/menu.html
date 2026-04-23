@@ -1,0 +1,28 @@
+<header class="cabecalho">
+    <a class="cabecalho__logo" href="#">Logo</a>
+
+    <!-- acessibilidade:
+            aria-label - nome do botão
+            aria-expanded - estado do menu
+            aria-controls - qual elemento é controlado
+            aria-hospopup - indica que abre um menu 
+            -->
+
+    <nav class="menu" data-menu>
+        <button class="menu__botao" aria-label="Abrir Menu" aria-haspopup="true" aria-controls="menu-lista"
+            aria-expanded="false">
+            Menu
+            <span class="menu__hamburguer"></span>
+        </button>
+
+        <ul class="menu__lista" id="menu-lista">
+            <li><a data-link="home" href="#">Home</a></li>
+            <li><a data-link="sobre" href="#">Sobre</a></li>
+            <li><a data-link="produtos" href="#">Produtos</a></li>
+            <li><a data-link="portifolio" href="#">Portifólio</a></li>
+            <li><a data-link="contato" href="#">Contato</a></li>
+        </ul>
+    </nav>
+</header>
+
+<script src="../components/menu.js"></script>
