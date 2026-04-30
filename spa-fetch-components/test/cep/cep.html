@@ -11,6 +11,7 @@
         box-sizing: border-box;
         padding: 0;
         margin: 0;
+        list-style: none;
     }
 
     body {
@@ -44,6 +45,42 @@
         border-radius: 10px;
         padding: 10px;
     }
+
+    strong {
+        color: red;
+    }
+
+    .cep-result__container {
+        margin-top: 20px;
+        background-color:darkslategrey;
+        border-radius: 10px;
+        padding: 20px;
+        color: white;
+        
+    }
+
+    .cep__title {
+        text-align: center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin-bottom: 10px;
+    }
+
+    .cep__result {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .cep__error {
+        background-color: rgb(255, 91, 91);
+        color: white;
+        border-radius: 10px;
+        padding: 10px;
+        display: none;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+
+}
 </style>
 
 <body>
@@ -51,13 +88,29 @@
         <div class="cep__container">
             <h1>Consulta de CEP</h1>
             <input type="text" class="cep__input" id="cep">
+
+            <div class="cep__error">
+                <p class="error__message"></p>
+            </div>
             <div class="cep__actions">
                 <button class="cep__button then__button">Buscar com .then()</button>
                 <button class="cep__button async__button">Buscar com async/await</button>
             </div>
         </div>
 
+
+        <div class="cep-result__container">
+            <div class="cep__title"><h1>Relatório do CEP</h1></div>
+            <ul class="cep__result">
+                <li><strong>CEP:</strong> <span id="cep-result"></span></li>
+                <li><strong>Logradouro:</strong> <span id="logradouro-result"></span></li>
+                <li><strong>Bairro:</strong> <span id="bairro-result"></span></li>
+                <li><strong>Cidade:</strong> <span id="cidade-result"></span></li>
+                <li><strong>Estado:</strong> <span id="estado-result"></span></li>
+            </ul>
+
     </main>
+    <script src="cep2.js"></script>
 </body>
 
 </html>
