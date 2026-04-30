@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,11 +11,84 @@
         strong {
             color: red;
         }
+
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            list-style: none;
+            margin: 0;
+        }
+
+        body {
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .erro__container {
+            background-color: #580000;
+            padding: 10px;
+            border-radius: 20px;
+            opacity: 0;
+            visibility: hidden;
+            transition: 1.4s;
+        }
+
+        .erro-ativo {
+            opacity: 1;
+            visibility: visible;
+            transform: scale(1.1);
+
+        }
+
+
+        .erro__title {
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #c40000;
+            border-radius: 10px;
+            text-align: center;
+            padding: 5px;
+        }
+
+        .erro__description {
+            margin-top: 10px;
+            color: rgb(255, 255, 255);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #c40000;
+            border-radius: 10px;
+            padding: 10px;
+            width: 450px;
+            display: flex;
+            flex-direction: column;
+        }
+
+
+        .content__description {
+            padding-top: 10px;
+        }
     </style>
 </head>
+
 <body>
     <div class="components__test">
 
     </div>
+
+    <div class="erro__container">
+        <div class="erro__title">
+            <h1 class="erro__title-content">Relatório de erro:</h1>
+        </div>
+        <ul class="erro__description">
+            <li class="name__description content__description"></li>
+            <li class="message__description content__description"></li>
+            <li class="code__description content__description"></li>
+            <li class="type__description content__description"></li>
+            <li class="stack__description content__description"></li>
+        </ul>
+    </div>
 </body>
+
 </html>

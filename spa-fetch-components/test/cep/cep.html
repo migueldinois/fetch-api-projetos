@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta CEP</title>
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+    }
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+
+    .cep__button {
+        padding: 10px;
+        border: none;
+        border-radius: 10px;
+        background-color: darkslategrey;
+        color: white;
+    }
+
+    .cep__container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        flex-direction: column;
+        text-align: center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .cep__input {
+        border: 1px solid darkslategray;
+        border-radius: 10px;
+        padding: 10px;
+    }
+</style>
+
+<body>
+    <main>
+        <div class="cep__container">
+            <h1>Consulta de CEP</h1>
+            <input type="text" class="cep__input" id="cep">
+            <div class="cep__actions">
+                <button class="cep__button then__button">Buscar com .then()</button>
+                <button class="cep__button async__button">Buscar com async/await</button>
+            </div>
+        </div>
+
+    </main>
+</body>
+
+</html>
