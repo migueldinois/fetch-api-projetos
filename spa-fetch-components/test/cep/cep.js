@@ -13,8 +13,17 @@ const campoEstado = document.querySelector('#estado-result')
 const campoErroMensagem = document.querySelector('.error__message')
 const campoErro = document.querySelector('.cep__error')
 
+// URL API 
+URL_BASE = 'https://viacep.com.br/ws/'
 
-const validarCampos = (cep) => {
+
+function obterCep(){
+    return cepInput.value.trim()
+}
+
+const validarCampos = () => {
+    const cep = obterCep()
+    
     // validando se o cep está vazio
     if (cepInput.value === '') {
         campoErro.style.display = 'block'
@@ -38,10 +47,11 @@ const validarCampos = (cep) => {
 
 
 // =================== Funcao para pesquisar com await e async ======================
-const pesquisarCepAwait = async (cep) => {
+const pesquisarCepAwait = async () => {
+    const cep = obterCep()
 
     if (validarCampos(cep)) {
-        const respostaApi = await fetch(`https://viacep.com.br/ws/${cep}/json/`).then()
+        const respostaApi = await fetch(`${URL_BASE}/${cep}/json`).then()
         // Espera ele retornar a resposta e dps eu coloco pra json, no caso pra dar certo no javascrpt
         const respostaJson = await respostaApi.json()
 
@@ -54,11 +64,44 @@ const pesquisarCepAwait = async (cep) => {
 
         // Passando tudo em forma de objeto para retornar tudo de uma vez só
         return { respostaCep, respostaLogradouro, respostaBairro, respostaCidade, respostaEstado }
-    } else{ 
+    } else {
         return false
     }
 
 }
+
+
+//================== Função para pesquisar com o then ================
+
+const pesquisarCepThen = () => {
+    const cep = obterCep()
+    if (validarCampos(cep)) {
+        const url = `${URL_BASE}/${cep}/json`;
+        return fetch(url)
+            .then(resposta => {
+                if (!resposta.ok) {
+                    throw new Error('Erro na Requisição');
+                }
+                return resposta.json();
+                
+
+                
+            })
+            .then(dados => {
+                return dados
+
+            })
+            .catch(error => {
+                console.warn('Houve um problema:', error.message);
+            });
+    } else {return false}
+    
+
+}
+
+
+
+// Eventos nos botoes
 
 try {
     asyncButton.addEventListener('click', () => {
@@ -71,16 +114,20 @@ try {
             campoEstado.textContent = resposta.respostaEstado
         })
     })
+
+    thenButton.addEventListener('click', () => {
+        pesquisarCepThen(cepInput.value).then(resultadoPesquisa => {
+            campoCep.textContent = resultadoPesquisa.cep
+            campoLogradouro.textContent = resultadoPesquisa.logradouro
+            campoBairro.textContent = resultadoPesquisa.bairro
+            campoCidade.textContent = resultadoPesquisa.localidade
+            campoEstado.textContent = resultadoPesquisa.uf
+        })
+
+    })
+
 }
 
 catch (erro) {
     console.warn(erro)
-}
-
-//================== Função para pesquisar com o then ================
-
-const pesquisarCepThen = () => {
-    if (validarCampos(cep)){
-        
-    }
 }
