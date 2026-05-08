@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Testando Todos os Alertas do SweetAlert2</title>
+
+
+    <!-- Bootstrap CSS via CDN CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+
+
+    <!-- SweetAlert2 CSS via CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.18.0/dist/sweetalert2.min.css">
+
+    <!-- SweetAlert2 JavaScript via CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.18.0/dist/sweetalert2.all.min.js" defer></script>
+
+    <!-- Bootstrap JS via CDN JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"
+        defer></script>
+
+    <!-- Script interno para testes da API Sweet -->
+    <script src="./sweet.js" defer></script>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4 ">Demonstração dos alertas do SweetAlert</h1>
+        <div class="row">
+            <!-- Card 1: Alerta Basico -->
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <div class="card-header">Alerta Básico</div>
+                    <div class="card-body text-center">
+                        <button class="btn btn-secundary" id="alertaBasico">Exibir alerta Básico</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 2:   -->
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <div class="card-header">Alerta de Sucesso</div>
+                    <div class="card-body text-center">
+                        <button class="btn btn-success" id="alertSucesso">Exibir Sucesso</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 3: -->
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <div class="card-header">Alerta de erro</div>
+                    <div class="card-body text-center">
+                        <button class="btn btn-danger" id="alertErro">Exibir Erro</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 4: -->
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <div class="card-header">Alerta de Aviso</div>
+                    <div class="card-body text-center">
+                        <button class="btn btn-warning" id="alertAviso">Exibir Aviso</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 5: -->
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <div class="card-header">Alerta Informativo</div>
+                    <div class="card-body text-center">
+                        <button class="btn btn-info" id="alertInfo">Exibir Informação</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 6: -->
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <div class="card-header">Alerta de Confirmação</div>
+                    <div class="card-body text-center">
+                        <button class="btn btn-primary" id="alertConfirm">Exibir Confirmação</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 7: -->
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <div class="card-header">Alerta com input</div>
+                    <div class="card-body text-center">
+                        <button class="btn btn-dark" id="alertInput">Exibir Prompt</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 8: -->
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <div class="card-header">Alerta com timer</div>
+                    <div class="card-body text-center">
+                        <button class="btn btn-info" id="alertTimer">Exibir Timer</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 9: -->
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <div class="card-header">Alerta com Contagem Regressiva</div>
+                    <div class="card-body text-center">
+                        <button class="btn btn-danger" id="alertContagem">Contagem regressiva</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 10: -->
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <div class="card-header">Alerta com HTML personalizado</div>
+                    <div class="card-body text-center">
+                        <button class="btn btn-info" id="alertHtml">Exibir Informação Personalizada</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>
